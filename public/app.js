@@ -11,6 +11,7 @@ angular.module('myModule', ['ngResource'])
             'update' : { method: 'PUT' }
         });
 
+        // This is a test comment. 
         $scope.posts = People.query();
         
         $scope.loadPost = function(id) {
