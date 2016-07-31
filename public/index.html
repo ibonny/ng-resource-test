@@ -1,0 +1,50 @@
+<HTML>
+    <HEAD>
+        <script type="text/javascript" src="/bower.js"></script>
+        <script type="text/javascript" src="/app.js"></script>
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    </HEAD>
+    <BODY ng-app="myModule" ng-controller="myController">
+        <input type="text" ng-model="myText"><br/>
+        {{myText}}<br/>
+        
+        This is a test.<br/>
+        
+        Second test.<br/>
+        
+        Initial value: {{initialValue}}<p/>
+        
+        <i class="fa fa-pencil"></i>
+        
+        <ul>
+            <li ng-repeat="post in posts">
+                <a href="#" ng-click="loadPost($index)">{{post.Name}}</a>
+            </li>
+        </ul><p/>
+
+        <div ng-show="post">
+            <form ng-submit="submitPerson();">
+                <span ng-hide="editName">{{ post.Name }}&nbsp;&nbsp;<i class="fa fa-pencil" ng-click="editName=true"></i></span>
+                <span ng-show="editName"><input style="display: inline;" size="40" type="text" ng-model="post.Name"></span><br/>
+                
+                <span ng-hide="editAge">{{ post.Age }}&nbsp;&nbsp;<i class="fa fa-pencil" ng-click="editAge=true"></i></span>
+                <span ng-show="editAge"><input style="display: inline;" size="40" type="text" ng-model="post.Age"></span><br/>
+                
+                <span ng-hide="editSex">{{ post.Sex }}&nbsp;&nbsp;<i class="fa fa-pencil" ng-click="editSex=true"></i></span>
+                <span ng-show="editSex"><input style="display: inline;" size="40" type="text" ng-model="post.Sex"></span><br/>
+                
+                <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+                
+                <!--<span ng-show="editTag" style="display: inline-block;">-->
+                <!--    <i class="btn btn-info fa fa-pencil" ng-click="edit=true" style="cursor: pointer;"></i>-->
+                <!--</span>-->
+                <!--<span ng-show="editTag" style="display: inline-block;">-->
+                <!--    <i class="btn btn-info fa fa-pencil" ng-click="edit=true" style="cursor: pointer;"></i>-->
+                <!--</span>-->
+                <!--<span ng-show="editTag" style="display: inline-block;">-->
+                <!--    <i class="btn btn-info fa fa-pencil" ng-click="edit=true" style="cursor: pointer;"></i>-->
+                <!--</span>-->
+            </form>
+        </div>
+    </BODY>
+</HTML>
